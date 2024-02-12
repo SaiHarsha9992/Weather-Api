@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --card-height: 70vh;
+  --card-width: calc(var(--card-height) / 1.2);
+}
+
+body {
+  min-height: 100vh;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+h1 {
+  color: white;
+  font-family: "Titan One", cursive;
+  margin-bottom: 20px;
+}
+.card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgba(241, 168, 10, 0.911);
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #a99a23,
+    #cab122 43%,
+    #ad5919
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #a99a23,
+    #cab122 43%,
+    #ad5919
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.search{
+  position: absolute;
+  top: 130px;
+  
+}
+
+.card-img{
+  position: relative;
+  bottom: 130px;
+}
+.input-bar{
+  position: absolute;
+  top: 4%;
+  width: 80%;
+  height: 55px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+.input-bar input{
+  position: relative;
+  width: 90%;
+  height: 100%;
+  right: 35px;
+  background: transparent;
+  border: 2px solid black;
+  outline: none;
+  border-radius:  10px;
+  font-size: 22px;
+  color: black;
+  font-weight: 500;
+  padding: 0 48px 0;
+}
+
+.input-bar input::placeholder{
+  color: black;
+  text-transform: capitalize;
+}
+
+.input-bar .img1{
+  position: absolute;
+  right: 330px;
+  width: 25px;
+  height: 90%;
+  bottom: 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 26px;
+  color: black;
+  padding: 0 40px 0 5px;
+  
+}
+
+.input-bar button{
+  position: absolute;
+  right: -10px;
+  width: 30px;
+  height: 100%;
+  bottom: 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 26px;
+  color: black;
+  padding: 0 40px 0 5px;
+  cursor: pointer;
+}
+
+.weather-box {
+  position: relative;
+  top: 23%;
+  text-align: center;
+}
+
+.weather-box img{
+  width: 60%;
+}
+.weather-box .parainfo{
+  position: relative;
+  bottom: 130px;
+  right: 8px;
+}
+.weather-box .temperature{
+  color: black;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+  margin: 10px 0 ;
+}
+.weather-box .temperature span{
+  position: absolute;
+  color: black;
+  font-size: 24px;
+}
+.description{
+  color: black;
+  font-size: 18px;
+}
+
+
+.weather-details{
+  position: absolute;
+  bottom: 100px;
+  left: 150px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+}
+
+.weather-details .humidity,
+.weather-details .wind{
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.weather-details .logo1{
+  position: relative;
+  font-size: 56px;
+  left: 360px;
+  margin-left: 20px;
+}
+
+.weather-details .text1{
+  position: relative;
+  left: 370px;
+}
+
+.weather-details .text2{
+  position: relative;
+  right: 90px;
+}
+
+.weather-details p{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.weather-details .logo2{
+  position: relative;
+  font-size: 56px;
+  right: 100px;
+  margin-left: 20px;
+}
